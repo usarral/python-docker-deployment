@@ -1,5 +1,5 @@
+![python-docker-template](https://socialify.git.ci/usarral/python-docker-template/image?description=1&descriptionEditable=DockerFile%20%C2%B7%20Docker-Compose%20%C2%B7%20Python3%20%C2%B7%20PostgreSQL&font=Source%20Code%20Pro&forks=0&issues=0&language=0&name=1&owner=1&pattern=Circuit%20Board&pulls=0&stargazers=0&theme=Dark)
 # Python Docker Deployment Template
-
 This project provides a template for deploying a Python application using Docker and Docker Compose, including a PostgreSQL database setup. It's designed to be a starting point for Python applications that require a database.
 
 ## Features
