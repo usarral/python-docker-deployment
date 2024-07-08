@@ -1,0 +1,35 @@
+services:
+  app:
+    build: ./app/
+    container_name: app
+    hostname: app
+    restart: unless-stopped
+    networks:
+      - app_net
+#   Port mapping for development, remove this for production deployment for use docker network
+    ports:
+        - ${SERVICE_PORT}:${SERVICE_PORT}
+    volumes:
+      - ./app:/app
+    working_dir: /app
+
+  db:
+    image: postgres:latest
+    container_name: db
+    hostname: db
+    restart: unless-stopped
+    networks:
+      - app_net
+    environment:
+        POSTGRES_USER: ${POSTGRES_USER}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+        POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+        - ./database/db:/var/lib/postgresql/data
+
+
+
+
+networks:
+  app_net:
+    driver: bridge
